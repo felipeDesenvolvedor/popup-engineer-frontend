@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import Popup from "./Popup.js"
 
-let i = 0;
 const Overlay = () => {
 
 const [configStyle, setConfigStyle] = useState({})
@@ -11,26 +10,33 @@ useEffect(() => {
     overlay: {
         width:'100vw',
         height:'100vh',
-        opacity:0.5,
-        backgroundColor:'#000',
-        position:'absolute',
+        backgroundColor: 'rgba(0,0,0, 0.5)',
+        position:'fixed',
         top:0
     },
     popup: {
-        width:500,
-        height:500,
-        color:'green'
+        width:'80%',
+        height:'80%',
+        color:'green',
+        backgroundColor:'#fff',
+        position:'absolute',
+        left:'50%',
+        top:'50%',
+        transform:'translate(-50%, -50%)'
     }
   } 
 
   setConfigStyle(config)
-  document.querySelector('h1').textContent = `State Alterado ${i++}`
 }, [])
   
   return (
-    <div className="overlay" style={configStyle.overlay}>
-        <Popup config={configStyle.popup} useStateConfigStyle={setConfigStyle}/>
-    </div>
+    <>
+      {configStyle && 
+        <div className="overlay" style={configStyle.overlay}>
+            <Popup config={configStyle.popup} useStateConfigStyle={setConfigStyle}/>
+        </div>
+      }
+    </>
   ) 
 }
 
