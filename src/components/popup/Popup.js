@@ -18,7 +18,6 @@ const Popup = (props) => {
             </div>
             <div className="contente-two">
                 <form>
-                    {/* <label for="nome">Nome</label> */}
                     <TextField id="outlined-basic" label="Outlined" variant="outlined" />
                 </form>
             </div>
