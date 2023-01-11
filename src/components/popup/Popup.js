@@ -3,14 +3,18 @@ import './Popup.css';
 import { TextField } from "@material-ui/core";
 
 const Popup = (props) => {
-    let closedPopup = {overlay:{visibility:'hidden', opacity:0}}
+    let overlay = {visibility:'hidden', opacity:0}
     let config = props.config
     let layerOne = config.layerOne
     let layerTwo = config.layerTwo
 
+    const handleOverlay = () => {
+        props.useStateConfigStyle(prevProps => ({...prevProps, overlay}))
+    }
+
     return (
         <div className="popup-container" style={config}>
-            <button  className="button-close" onClick={()=>{props.useStateConfigStyle(closedPopup)}} style={{position:'absolute', right:'20px', top:'20px'}}>X</button>
+            <button  className="button-close" onClick={handleOverlay} style={{position:'absolute', right:'20px', top:'20px'}}>X</button>
             <div className="contente-one" style={layerOne}>
            
                 {/* <img src={img} style={imgStyle} alt="imagem de exemplo do popup"/>  */}

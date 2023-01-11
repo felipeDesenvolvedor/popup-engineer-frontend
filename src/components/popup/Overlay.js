@@ -1,4 +1,4 @@
-import {useState } from "react"
+import {useEffect, useState } from "react"
 import Popup from "./Popup.js"
 import imgPath from "../../img/img-2.jfif";
 
@@ -26,18 +26,18 @@ const Overlay = () => {
           width:'50%',
           backgroundImage:`url(${imgPath})`,
           backgroundSize:'cover',
-          backgroundPosition:'cover',
           backgroundRepeat:'no-repeat',
           backgroundPosition:'center bottom'
         },
         layerTwo:{
           width:'50%'
-        },
+        }
     }
   } 
 
 const [configStyle, setConfigStyle] = useState(config)
-  
+
+
   return (
     <>
       {configStyle && 
