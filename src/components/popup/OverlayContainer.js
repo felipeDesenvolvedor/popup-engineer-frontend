@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import Popup from './Popup.js';
 import { AppConfigContext } from '../../contexts/index';
 import { config, defaultConfig } from '../../config/api/index';

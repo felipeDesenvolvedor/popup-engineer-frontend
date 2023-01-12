@@ -18,6 +18,9 @@ export const config = {
     top:'50%',
     transform:'translate(-50%, -50%)',
     layerOne: {
+      width:'50%'
+    },
+    layerTwo:{
       height:'100%',
       width:'50%',
       backgroundImage:`url(${imgPath})`,
@@ -25,8 +28,6 @@ export const config = {
       backgroundRepeat:'no-repeat',
       backgroundPosition:'center bottom'
     },
-    layerTwo:{
-      width:'50%'
-    }
+    elementsInformation:'layerOne'
   }
 }; 

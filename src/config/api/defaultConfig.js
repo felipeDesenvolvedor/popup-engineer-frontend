@@ -27,6 +27,7 @@ export const defaultConfig = {
     },
     layerTwo:{
       width:'50%'
-    }
+    },
+    elementsInformation:'layerOne'
   }
 }; 
