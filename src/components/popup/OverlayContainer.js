@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Popup from './Popup.js';
 import { AppConfigContext } from '../../contexts/index';
 import { config, defaultConfig } from '../../config/api/index';
@@ -12,7 +12,15 @@ const Overlay = props => {
 
 const OverlayContainer = () => {
 
-  const [configStyle, setConfigStyle] = useState(config || defaultConfig);
+  const [configStyle, setConfigStyle] = useState();
+
+  useEffect(() => {
+    setConfigStyle(config || defaultConfig);
+  }, []);
+
+  useEffect(() => {
+    console.log(configStyle);
+  }, [configStyle]);
 
   return (
     <>
